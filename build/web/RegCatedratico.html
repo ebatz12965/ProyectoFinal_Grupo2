@@ -6,75 +6,94 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Registro Catedráticos</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                min-height: 100vh;
+                background-image: url("img/fondo2.jpg");
+                background-size: 100%;
+                background-position: center center;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
-            
-   
-            <!-- Inicio del Container -->
-        <div class="container mt-2">
-            
-        <h1>Formulario de Registro de Catedráticos</h1>
-        <a href="ClienteController"> Click Aquí </a>
+
+        <div class="container-sm ">
+        <!--div class="d-flex justify-content-around mx-4 my-5"-->     
+            <div class="shadow-lg p-3 bg-white rounded">
+                <form method="POST" id="form" name="form" action="NewServlet">
+                    <div class="for m-group">
+                        <!--img src="img/back-arrow.png" class="row my-3" width="25" alt="..." -->
+                        <img src="img/logo.png" class="rounded mx-auto d-block" width="100" alt="...">
+                        <h2 class="display-8 text-center my-4"> REGISTRO DE CATEDRATICOS </h2>
+                        <div class="for m-group">
+                            <label for="codigo">Código:</label>
+                            <input class="form-control" type="text" placeholder="Ingrese su código" name="codigo" id="codigo">
+                          </div>
+                          <div class="form-group">
+                          <div class="row">
+                          <div class="col">
+                            <label for="nombre">Nombre:</label>  
+                            <input type="text" class="form-control" placeholder="Ingresar su nombre" name="nombre" id="nombre">
+                          </div>
+
+                          </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="correo">Correo:</label>
+                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="name@gmail.com" name="correo" id="correo">
+                            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Contraseña:</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese la contraseña" name="pass">
+                          </div>
+                          <div class="form-group">
+                            <label for="direccion">Dirección:</label>
+                            <input class="form-control" type="text" placeholder="Ingresar su dirección" name="direccion" id="direccion">
+                          </div>
+                        
+                           <div class="form-group">
+                                <div class="row">
+                                <div class="col">
+                                    <label for="telefono">Teléfono:</label>
+                                    <input class="form-control" type="text" placeholder="Ingresar su número de teléfono" name="telefono" id="telefono">
+                                </div>
+                                <div class="col">
+                                  <label for="telefono">Sucursal:</label>  
+                                  <select class="form-control" name="Sucursal">
+                                        <option value="1">Puerto Barrios</option>
+                                        <option value="2">Morales</option>
+                                        <option value="3">Los Amates</option>
+                                        <option value="4">El Estor</option>
+                                    </select>
+                                </div>
+                                </div>
+                                </div>
+                           
+                          
+                     <input type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success" value="Register">
+                        <button type="reset" class="btn btn-danger">Vaciar</button>
+                        <!--button onclick="home.html" type="reset" class="btn btn-warning" style="float: right;">Back</button-->
+                        <a class="btn btn-warning" href="home.html" style="float: right;">Back</a>
+                         
+                    
+                    </div>
+                </form>
+            </div>
+        </div>    
         
-        
-            <!-- Inicio del Formulario -->
-        <form method="POST" id="form" name="form" action="NewServlet">
-            <div class="for m-group">
-              <label for="codigo">Código de Catedrático</label>
-              <input class="form-control" type="text" placeholder="Ingrese su código" name="codigoC" id="codigoC">
-            </div>
-            <div class="form-group">
-            <div class="row">
-            <div class="col">
-              <label for="nombre">Nombre del Catedrático</label>  
-              <input type="text" class="form-control" placeholder="Ingresar su nombre" name="nombreC" id="nombreC">
-            </div>
-            
-            </div>
-            </div>
-            <div class="form-group">
-              <label for="correo">Correo del Catedrático</label>
-              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="name@gmail.com" name="correoC" id="correoC">
-              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.s.</small>
-            </div>
-            <!-- div class="form-group">
-              <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese la contraseña" name="pass">
-            </div -->
-            <div class="form-group">
-              <label for="direccion">Dirección</label>
-              <input class="form-control" type="text" placeholder="Ingresar su dirección" name="direccionC" id="direccionC">
-            </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input class="form-control" type="text" placeholder="Ingresar su número de teléfono" name="telefonoC" id="telefonoC">
-            </div>
-            
-            <select class="form-control" name="Sucursar">
-                <option value="1">Puerto Barrios</option>
-                <option value="2">Morales</option>
-                <option value="3">Los Amates</option>
-                <option value="4">El Estor</option>
-            </select><br>
-           
-          
-            <div class="form-group has-feedback">
-              <input type="button" value="CAPTURAR" onclick="capturarDatos()" class="submit-button btn btn-default" id="botonEnviar">
-               
-            </div>
-           <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar con JS</button>
-             <button type="button" class="btn btn-danger">Cancelar</button>
-            
-            <!-- Fin del Formulario -->
-        </form>
-            <!-- Fin del Container -->
-        </div>
     </body>
 </html>
