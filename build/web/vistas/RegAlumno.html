@@ -20,7 +20,7 @@ and open the template in the editor.
             }
             body{
                 min-height: 100vh;
-                background-image: url("img/fondo2.jpg");
+                background-image: url(".../img/fondo2.jpg");
                 background-size: 100%;
                 background-position: center center;
                 background-attachment: fixed;
@@ -39,10 +39,20 @@ and open the template in the editor.
                         <!--img src="img/back-arrow.png" class="row my-3" width="25" alt="..." -->
                         <img src=".../img/logo.png" class="rounded mx-auto d-block" width="100" alt="...">
                         <h2 class="display-8 text-center my-4"> REGISTRO DE ALUMNOS </h2>
-                        <div class="for m-group">
-                            <label for="codigo">Código de Alumno:</label>
-                            <input class="form-control" type="text" placeholder="Ingrese su código" name="codigo" id="codigo">
+                      
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="telefono">Código:</label>
+                                    <input class="form-control" type="text" placeholder="Ingrese su código" name="codigo" id="codigo">
+                                </div>
+                                <div class="col">
+                                    <label for="telefono">Fecha de Registro:</label>  
+                                    <input class="form-control" type="date" placeholder="Ingrese su código" name="codigo" id="codigo">
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
